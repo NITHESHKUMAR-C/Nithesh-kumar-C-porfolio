@@ -1,0 +1,71 @@
+.about { padding: 44px 0; overflow-y: auto; }
+.about__inner { width: 100%; }
+
+.about__profile {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 18px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+.about__avatar {
+  width: 80px; height: 80px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #000;
+  font-weight: 800; font-size: 22px;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+  box-shadow: 0 0 22px var(--accent-glow);
+}
+.about__name { font-size: 20px; font-weight: 700; margin-bottom: 3px; }
+.about__role  { font-size: 12px; margin-bottom: 10px; }
+
+.about__chips { display: flex; flex-wrap: wrap; gap: 5px; }
+.chip {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  padding: 3px 8px;
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  color: var(--muted);
+  transition: border-color 0.2s, color 0.2s;
+}
+.chip:hover { border-color: var(--accent); color: var(--accent); }
+
+.about__bio {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-bottom: 20px;
+}
+.about__bio p { font-size: 13.5px; line-height: 1.7; color: var(--muted); }
+.about__bio strong { color: var(--text); }
+
+.about__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10px;
+}
+.about__card {
+  padding: 15px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  transition: border-color 0.2s, transform 0.2s;
+  animation: fadeUp 0.5s ease both;
+}
+.about__card:hover { border-color: var(--accent); transform: translateY(-2px); }
+.about__card-icon { font-size: 18px; display: block; margin-bottom: 7px; }
+.about__card-title { font-size: 12.5px; font-weight: 600; margin-bottom: 4px; }
+.about__card-desc  { font-size: 11.5px; line-height: 1.55; }
+
+@media (max-width: 768px) {
+  .about__profile { flex-direction: column; text-align: center; }
+  .about__chips { justify-content: center; }
+  .about__grid { grid-template-columns: 1fr; }
+}

@@ -1,0 +1,210 @@
+.hero {
+  padding-top: 44px;
+  align-items: stretch;
+  flex-direction: row;
+}
+
+/* ── Left half ── */
+.hero__left {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 0 40px 0 72px;
+  animation: fadeUp 0.65s ease both;
+}
+
+.hero__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 11px;
+  color: var(--accent);
+  background: var(--accent-dim);
+  border: 1px solid var(--accent);
+  padding: 5px 12px;
+  border-radius: 20px;
+  width: fit-content;
+  margin-bottom: 22px;
+  letter-spacing: 0.03em;
+}
+.badge-dot {
+  width: 6px; height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  animation: pulseGlow 2s ease infinite;
+  flex-shrink: 0;
+}
+
+.hero__name {
+  font-size: clamp(40px, 4.8vw, 64px);
+  font-weight: 800;
+  line-height: 1.04;
+  letter-spacing: -0.02em;
+  margin-bottom: 18px;
+}
+
+.hero__typing {
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  height: 26px;
+  margin-bottom: 18px;
+}
+.cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1.1em;
+  background: var(--accent);
+  margin-left: 2px;
+  animation: blink 1s step-end infinite;
+  vertical-align: middle;
+}
+
+.hero__desc {
+  font-size: 14px;
+  line-height: 1.65;
+  max-width: 420px;
+  margin-bottom: 28px;
+}
+
+.hero__cta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 32px;
+}
+
+.hero__stats {
+  display: flex;
+  align-items: center;
+}
+.stat {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 0 18px;
+}
+.stat:first-child { padding-left: 0; }
+.stat__val {
+  font-size: 21px;
+  font-weight: 700;
+}
+.stat__label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  margin-top: 1px;
+}
+.stat__div {
+  width: 1px;
+  height: 30px;
+  background: var(--border);
+}
+
+/* ── Right half ── */
+.hero__right {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+.pixel-canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.terminal {
+  position: relative;
+  z-index: 2;
+  width: 272px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 24px 56px rgba(0,0,0,0.45);
+  animation: fadeUp 0.85s ease both;
+}
+.terminal__bar {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 9px 14px;
+  background: var(--surface2);
+  border-bottom: 1px solid var(--border);
+}
+.terminal__file {
+  margin-left: auto;
+  font-size: 10px;
+  color: var(--muted);
+}
+.terminal__body {
+  padding: 16px;
+  font-size: 11.5px;
+  line-height: 1.75;
+  color: var(--text);
+}
+
+.hero__avatar {
+  position: absolute;
+  top: 56px; right: 52px;
+  z-index: 3;
+  width: 70px; height: 70px;
+  border-radius: 50%;
+  background: var(--accent);
+  color: #000;
+  font-weight: 800;
+  font-size: 20px;
+  font-family: var(--font-sans);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 28px var(--accent-glow);
+  animation: fadeUp 0.75s ease both;
+}
+
+/* ── Scroll hint ── */
+.scroll-hint {
+  position: absolute;
+  bottom: 22px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: var(--muted);
+  background: none;
+  border: none;
+  letter-spacing: 0.08em;
+  transition: color 0.2s;
+}
+.scroll-hint:hover { color: var(--accent); }
+.bounce { display: inline-block; animation: bounce 1.6s ease infinite; }
+
+/* ── Mobile ── */
+@media (max-width: 768px) {
+  .hero {
+    flex-direction: column;
+    overflow-y: auto;
+    align-items: center;
+    padding: 54px 0 70px;
+  }
+  .hero__left {
+    padding: 20px 20px 0;
+    animation-delay: 0s;
+  }
+  .hero__name { font-size: 36px; }
+  .hero__right {
+    width: 100%;
+    min-height: 200px;
+    margin-top: 20px;
+  }
+  .hero__avatar { top: 16px; right: 16px; width: 54px; height: 54px; font-size: 16px; }
+  .terminal { width: 230px; }
+  .terminal__body { font-size: 10.5px; }
+}

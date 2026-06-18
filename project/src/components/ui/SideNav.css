@@ -1,0 +1,73 @@
+.sidenav {
+  position: fixed;
+  left: 18px;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 150;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.sidenav__dot {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.sidenav__pip {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--border);
+  display: block;
+  transition: background 0.25s, transform 0.25s, box-shadow 0.25s;
+}
+
+.sidenav__dot:hover .sidenav__pip {
+  background: var(--accent);
+  transform: scale(1.35);
+}
+
+.sidenav__dot.active .sidenav__pip {
+  background: var(--accent);
+  transform: scale(1.5);
+  box-shadow: 0 0 10px var(--accent), 0 0 22px var(--accent-dim);
+}
+
+.sidenav__label {
+  position: absolute;
+  left: calc(100% + 10px);
+  font-size: 10px;
+  white-space: nowrap;
+  color: var(--accent);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 3px 8px;
+  border-radius: 4px;
+  pointer-events: none;
+  animation: fadeUp 0.15s ease forwards;
+}
+
+@media (max-width: 768px) {
+  .sidenav {
+    left: 50%;
+    top: auto;
+    bottom: 14px;
+    transform: translateX(-50%);
+    flex-direction: row;
+    gap: 14px;
+  }
+  .sidenav__label {
+    left: 50%;
+    bottom: calc(100% + 8px);
+    top: auto;
+    transform: translateX(-50%);
+  }
+}

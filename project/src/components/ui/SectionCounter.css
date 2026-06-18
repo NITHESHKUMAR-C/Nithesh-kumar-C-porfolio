@@ -1,0 +1,14 @@
+.sc {
+  position: fixed;
+  bottom: 18px;
+  right: 18px;
+  z-index: 150;
+  font-size: 11px;
+  letter-spacing: 0.1em;
+  user-select: none;
+}
+.sc__cur { font-weight: 600; }
+
+@media (max-width: 768px) {
+  .sc { bottom: 46px; right: 14px; }
+}
