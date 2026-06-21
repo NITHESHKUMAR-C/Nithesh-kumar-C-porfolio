@@ -33,7 +33,7 @@ export default function AboutSection({ id }) {
         ref={ref}
         className={`container container--sm about__inner fade-up${inView ? ' visible' : ''}`}
       >
-        <div className="section-label">02 / about.md</div>
+        <div className="section-label"></div>
 
         <div className="about__profile">
           <div className="about__avatar">NK</div>
@@ -43,7 +43,7 @@ export default function AboutSection({ id }) {
             <div className="about__chips">
               <a href="mailto:nithesh2425@gmail.com" className="chip mono">nithesh2425@gmail.com</a>
               <a href="tel:+918838111580" className="chip mono">+91 8838111580</a>
-              <a href="https://linkedin.com/in/nithesh-kumar-c" target="_blank" rel="noopener noreferrer" className="chip mono">LinkedIn</a>
+              <a href="https://www.linkedin.com/in/nithesh-kumar-c-5131572a4" target="_blank" rel="noopener noreferrer" className="chip mono">LinkedIn</a>
               <span className="chip mono">Krishnagiri, TN</span>
             </div>
           </div>

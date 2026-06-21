@@ -3,6 +3,7 @@ import { useInView } from '../../hooks/useInView'
 import './ExperienceSection.css'
 
 const TIMELINE = [
+ 
   {
     year: '2025',
     company: 'Dev Technology Solutions',
@@ -30,16 +31,17 @@ const WORKSHOPS = [
   {
     icon: '⚛️',
     title: 'React.js Workshop',
+    badge: 'Frontend',
     org: 'Kongu Engineering College',
     desc: 'Hands-on experience building dynamic, reusable, component-based UIs with React.',
   },
   {
-    icon: '🤖',
-    title: 'Robotics Program',
-    org: 'IIT Delhi IHFC × Zeekers',
-    badge: 'DPIIT Certified',
-    desc: '45-hour intensive robotics program supported by I-Hub Foundation for Cobotics, IIT Delhi.',
-  },
+    icon: '🚀',
+    title: 'Niral Thiruvizha 2.0 Ignite Bootcamp',
+    badge: 'Venture Idea',
+    org: 'Venture Development',
+    desc: 'Participated in intensive design thinking and venture idea development sessions focused on crafting viable tech solutions.',
+  }
 ]
 
 export default function ExperienceSection({ id }) {
@@ -50,7 +52,7 @@ export default function ExperienceSection({ id }) {
         ref={ref}
         className={`container container--sm exp__inner fade-up${inView ? ' visible' : ''}`}
       >
-        <div className="section-label">03 / experience.sh</div>
+        
         <h2 className="exp__title">Experience</h2>
 
         <div className="timeline">
@@ -78,6 +80,9 @@ export default function ExperienceSection({ id }) {
 
         <div className="exp__divider" />
 
+        {/* WORKSHOPS HEADING ADDED HERE */}
+        <h2 className="exp__title" style={{ marginTop: '8 0px' }}>Workshops & Bootcamps</h2>
+
         <div className="workshops">
           {WORKSHOPS.map((w, i) => (
             <div
@@ -97,6 +102,24 @@ export default function ExperienceSection({ id }) {
             </div>
           ))}
         </div>
+
+        {/* CENTERED ICON ADDED AT THE BOTTOM */}
+        <div className="exp__footer-icon">
+          <svg 
+            width="32" 
+            height="32" 
+            viewBox="0 0 24 24" 
+            fill="none" 
+            stroke="var(--accent)" 
+            strokeWidth="2" 
+            strokeLinecap="round" 
+            strokeLinejoin="round"
+          >
+            <polyline points="16 18 22 12 16 6"></polyline>
+            <polyline points="8 6 2 12 8 18"></polyline>
+          </svg>
+        </div>
+
       </div>
     </section>
   )

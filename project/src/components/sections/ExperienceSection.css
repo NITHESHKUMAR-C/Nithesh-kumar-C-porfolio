@@ -45,7 +45,7 @@
 .exp__divider { height: 1px; background: var(--border); margin: 4px 0 20px; }
 
 /* Workshops */
-.workshops { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.workshops { display: grid; grid-template-columns: 1fr ; gap: 16px; }
 .workshop {
   display: flex;
   align-items: flex-start;
@@ -73,6 +73,15 @@
 }
 .workshop__org  { font-size: 10.5px; margin-bottom: 5px; }
 .workshop__desc { font-size: 11.5px; line-height: 1.5; }
+
+/* Footer Icon container */
+.exp__footer-icon {
+  display: flex;
+  justify-content: center;
+  margin-top: 60px;
+  padding-bottom: 20px;
+  opacity: 0.8;
+}
 
 @media (max-width: 768px) {
   .tl-item { grid-template-columns: 42px 18px 1fr; gap: 0 10px; }

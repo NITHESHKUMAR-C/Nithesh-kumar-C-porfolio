@@ -4,8 +4,10 @@
 
 .certs__grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 12px;
+  grid-template-columns: 1fr; /* This forces a single vertical column */
+  gap: 20px; /* Adjust spacing between cards if needed */
+  max-width: 600px; /* Prevents the cards from becoming overly wide on desktop */
+  margin: 0 auto; /* Centers the vertical stack on the page */
 }
 
 .cert-card {

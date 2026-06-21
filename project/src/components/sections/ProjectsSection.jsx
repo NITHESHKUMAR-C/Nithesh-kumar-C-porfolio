@@ -26,16 +26,8 @@ const PROJECTS = [
     features: ['Data Preprocessing', 'Feature Selection', 'Model Evaluation'],
     tags: ['Python', 'Pandas', 'NumPy', 'Scikit-Learn', 'Matplotlib'],
     github: 'https://github.com/NITHESHKUMAR-C/IPL-winner-prediction',
-  },
-  {
-    icon: '🎮',
-    name: 'Python Games Collection',
-    type: 'Python · OOP Architecture',
-    desc: 'Modular Python mini-games with OOP design patterns, score tracking, input validation, and progressive level difficulty systems.',
-    features: ['OOP Design', 'Score Tracking', 'Modular Architecture'],
-    tags: ['Python', 'OOP'],
-    github: 'https://github.com/NITHESHKUMAR-C',
-  },
+  }
+  
 ]
 
 export default function ProjectsSection({ id }) {
@@ -46,7 +38,7 @@ export default function ProjectsSection({ id }) {
         ref={ref}
         className={`container projects__inner fade-up${inView ? ' visible' : ''}`}
       >
-        <div className="section-label">05 / projects.db</div>
+        <div className="section-label"></div>
         <h2 className="projects__title">Projects</h2>
         <div className="projects__grid">
           {PROJECTS.map((p, i) => (

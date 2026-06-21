@@ -3,9 +3,9 @@
 .projects__title { font-size: 26px; font-weight: 700; margin-bottom: 22px; }
 
 .projects__grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 14px;
+  display: flex;
+  flex-direction: column; /* This forces them to stack vertically */
+  gap: 20px; /* Adjust the space between vertically stacked projects */
 }
 
 .proj-card {

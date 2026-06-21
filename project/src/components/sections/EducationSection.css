@@ -1,0 +1,168 @@
+/* Container styling */
+.education-section {
+  padding: 60px 20px;
+  max-width: 1000px; /* Widened slightly to fit both columns */
+  margin: 0 auto;
+}
+
+/* Timeline wrapper */
+.education__timeline {
+  position: relative;
+  margin-top: 60px;
+}
+
+/* The central vertical line */
+.education__timeline::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%; /* Places the line perfectly in the center */
+  width: 2px;
+  margin-left: -1px; /* Centers the 2px width */
+  background: var(--border, #334155);
+}
+
+/* Individual card container */
+.education-card {
+  position: relative;
+  width: 50%;
+  padding: 0 40px; /* Space between the card and the center line */
+  margin-bottom: 40px;
+  box-sizing: border-box;
+}
+
+.education-card:last-child {
+  margin-bottom: 0;
+}
+
+/* Push odd cards (1st, 3rd) to the right side */
+.education-card:nth-child(odd) {
+  left: 50%;
+}
+
+/* Keep even cards (2nd) on the left side */
+.education-card:nth-child(even) {
+  left: 0;
+}
+
+/* The circular icon on the timeline */
+.education-card__icon {
+  position: absolute;
+  top: 20px; /* Aligns vertically with the top of the content box */
+  width: 32px;
+  height: 32px;
+  background: var(--accent); /* Changes automatically with theme */
+  border-radius: 8px; /* Slightly rounded square */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--bg); /* Contrasts with the accent color */
+  box-shadow: 0 0 0 6px var(--bg); /* Cutout effect for the line, matches theme bg */
+  z-index: 1;
+}
+
+.education-card__icon svg {
+  width: 16px;
+  height: 16px;
+}
+
+/* Snap the icon to the center line for right-side cards */
+.education-card:nth-child(odd) .education-card__icon {
+  left: -16px; /* Pulls it exactly over the center line */
+}
+
+/* Snap the icon to the center line for left-side cards */
+.education-card:nth-child(even) .education-card__icon {
+  right: -16px; /* Pushes it exactly over the center line */
+}
+
+/* The main content box (Restored missing properties) */
+.education-card__content {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 24px;
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.education-card__content:hover {
+  transform: translateY(-3px);
+  border-color: var(--accent); /* Adapts to theme */
+  box-shadow: 0 8px 24px var(--accent-glow); /* Adapts to theme */
+}
+
+/* Typography (Removed duplicates) */
+.education-card__content h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.2rem;
+  color: var(--text, inherit); 
+}
+
+.institution {
+  margin: 0 0 20px 0;
+  color: var(--muted, #64748b);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+/* Tags/Badges for Year and Score */
+.education-card__meta {
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
+}
+
+.year, .score {
+  padding: 4px 12px;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.year {
+  background: var(--surface2);
+  color: var(--text, inherit);
+}
+
+.score {
+  background: var(--accent); /* Adapts to theme */
+  color: var(--bg); /* Adapts to theme */
+}
+
+/* Mobile Responsiveness: Reverts to a single vertical column on smaller screens */
+@media (max-width: 768px) {
+  .education__timeline::before {
+    left: 20px; /* Moves the center line to the left edge */
+  }
+
+  .education-card {
+    width: 100%;
+    padding: 0 0 0 60px; /* Clears space for the line and icon on the left */
+  }
+
+  .education-card:nth-child(odd),
+  .education-card:nth-child(even) {
+    left: 0; /* Resets the left/right shifting */
+  }
+
+  .education-card:nth-child(odd) .education-card__icon,
+  .education-card:nth-child(even) .education-card__icon {
+    left: 4px; /* Centers the icon on the newly moved left line */
+    right: auto;
+  }
+}
+
+/* Force the bold text to be black in light mode */
+[data-theme='light'] .education-card__content h3,
+.light .education-card__content h3,
+.light-mode .education-card__content h3 {
+  color: #0f172a !important;
+}
+
+/* Optional: Make the institution name a darker gray in light mode for better readability */
+[data-theme='light'] .institution,
+.light .institution,
+.light-mode .institution {
+  color: #334155 !important; 
+}

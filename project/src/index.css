@@ -39,9 +39,21 @@ body {
   background: var(--bg);
   color: var(--text);
   font-family: var(--font-sans);
+  
+  /* NEW: Makes the entire portfolio lightly bold */
+  font-weight: 500; 
+  /* NEW: Smooths out the bold text so it looks crisp and premium */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  
   line-height: 1.5;
   overflow-x: hidden;
   transition: background 0.3s, color 0.3s;
+}
+
+/* NEW: Forces all text elements to inherit the same unified font style */
+h1, h2, h3, h4, h5, h6, p, a, span, button {
+  font-family: inherit;
 }
 
 a { color: inherit; text-decoration: none; }
@@ -195,4 +207,17 @@ button { cursor: pointer; }
 @media (max-width: 768px) {
   .section { overflow-y: auto; }
   .container, .container--sm, .container--xs { padding: 0 18px; }
+}
+/* Centers all section titles and their small labels */
+.section-label, 
+h2[class$="__title"], 
+.education-section > h2 {
+  text-align: center;
+  width: 100%;
+}
+
+/* Optional: Center the divider line in the Experience section too */
+.exp__divider {
+  margin-left: auto;
+  margin-right: auto;
 }
