@@ -101,43 +101,41 @@ export default function HeroSection({ id, onNavigate }) {
           and intelligent software solutions.
         </p>
 
-       <div className="hero__cta">
-  <a
-    href="https://drive.google.com/file/d/14xaHIN6U3J-Wn27v5AusrQwgCIBTHrUu/view?usp=drivesdk"
-    target="_blank"
-    rel="noopener noreferrer"
-    className="btn btn--primary"
-  >
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-      <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
-      <polyline points="7 10 12 15 17 10"/>
-      <line x1="12" y1="15" x2="12" y2="3"/>
-    </svg>
-    View Resume
-  </a>
-  
-  <a href="#projects" className="btn btn--outline">
-    View Projects
-  </a>
+        <div className="hero__cta">
+          <a
+            href="https://drive.google.com/file/d/14xaHIN6U3J-Wn27v5AusrQwgCIBTHrUu/view?usp=drivesdk"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="btn btn--primary"
+          >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+              <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+              <polyline points="7 10 12 15 17 10"/>
+              <line x1="12" y1="15" x2="12" y2="3"/>
+            </svg>
+            View Resume
+          </a>
+          
+          <a href="#projects" className="btn btn--outline">
+            View Projects
+          </a>
 
-  {/* New Reliable Navigation Links */}
-  <a href="#experience" className="btn btn--outline">
-    Experience
-  </a>
+          <a href="#experience" className="btn btn--outline">
+            Experience
+          </a>
 
-  <a href="#skills" className="btn btn--outline">
-    Technical Skills
-  </a>
+          <a href="#skills" className="btn btn--outline">
+            Technical Skills
+          </a>
 
-  <a href="#certifications" className="btn btn--outline">
-    Certifications
-  </a>
-  
-  {/* I also updated "Contact Me" to use an anchor tag for consistency */}
-  <a href="#contact" className="btn btn--ghost">
-    Contact Me
-  </a>
-</div>
+          <a href="#certifications" className="btn btn--outline">
+            Certifications
+          </a>
+          
+          <a href="#contact" className="btn btn--ghost">
+            Contact Me
+          </a>
+        </div>
         <div className="hero__stats">
           {[
             { val: '8.22', label: 'CGPA' },
@@ -177,14 +175,27 @@ export default function HeroSection({ id, onNavigate }) {
   open: true
 }`}</pre>
         </div>
-        <div className="hero__avatar">NK</div>
+        
+        {/* 📸 YOUR NEW SQUARE IMAGE TAG */}
+        <img src="/profile.jpg" alt="Nithesh Kumar C" className="hero__avatar profile-img" />
+        
       </div>
 
-     {/* ── Scroll hint ── */}
-<a href="#about" className="scroll-hint mono" aria-label="Next section">
-  scroll to explore&nbsp;<span className="bounce">↓</span>
-</a>
+      {/* ── Scroll hint ── */}
+      <a href="#about" className="scroll-hint mono" aria-label="Next section">
+        scroll to explore&nbsp;<span className="bounce">↓</span>
+      </a>
   
     </section>
   )
+}
+// Notice there is no "import" needed at the top of the file!
+
+export default function MySection() {
+  return (
+    <div>
+      {/* The "/" tells React to look inside the public folder */}
+      <img src="/nithesh.jpg" alt="My Profile" />
+    </div>
+  );
 }
