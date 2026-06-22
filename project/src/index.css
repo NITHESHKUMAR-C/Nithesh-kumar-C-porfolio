@@ -1,3 +1,4 @@
+
 /* ── Color tokens ── */
 :root {
   --bg: #0a0a0a;
@@ -29,7 +30,8 @@
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 html {
-  scroll-snap-type: y mandatory;
+  /* UPDATED: Changed to proximity so scrolling on desktop isn't glitchy */
+  scroll-snap-type: y proximity;
   overflow-y: scroll;
   height: 100%;
 }
@@ -62,8 +64,12 @@ button { cursor: pointer; }
 /* ── Scroll sections ── */
 .section {
   scroll-snap-align: start;
-  height: 100vh;
-  overflow: hidden;
+  
+  /* UPDATED: Lets the height hug your content instead of forcing a massive gap */
+  height: auto; 
+  padding: 100px 0; 
+  overflow: visible; 
+  
   display: flex;
   align-items: center;
   justify-content: center;
@@ -83,7 +89,8 @@ button { cursor: pointer; }
 /* ── Layout helpers ── */
 .container {
   width: 100%;
-  max-width: 860px;
+  /* UPDATED: Widened from 860px to 1000px to fill out large desktop screens */
+  max-width: 1000px; 
   padding: 0 28px;
   margin: 0 auto;
 }
@@ -221,6 +228,7 @@ h2[class$="__title"],
   margin-left: auto;
   margin-right: auto;
 }
+
 /* ── MOBILE STYLES (Applies only to screens smaller than 768px) ── */
 @media (max-width: 768px) {
   
@@ -233,10 +241,10 @@ h2[class$="__title"],
   .section { 
     height: auto; 
     min-height: 100vh;
-    overflow-y: visible; /* Let content show! */
-    padding: 80px 0; /* Give breathing room at the top and bottom */
+    overflow-y: visible; 
+    padding: 80px 0; 
     scroll-snap-align: none;
-    display: block; /* Removes strict centering that breaks tall content */
+    display: block; 
   }
 
   /* 3. Make all main titles smaller to fit the narrow screen */
@@ -256,7 +264,7 @@ h2[class$="__title"],
   .btn {
     width: 100%;
     justify-content: center;
-    padding: 14px 18px; /* Taller buttons for mobile */
+    padding: 14px 18px; 
   }
 
   /* 6. Stack quick links nicely */
@@ -265,3 +273,4 @@ h2[class$="__title"],
     align-items: center;
   }
 }
+
