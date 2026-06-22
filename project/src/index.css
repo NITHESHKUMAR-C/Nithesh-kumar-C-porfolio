@@ -221,3 +221,47 @@ h2[class$="__title"],
   margin-left: auto;
   margin-right: auto;
 }
+/* ── MOBILE STYLES (Applies only to screens smaller than 768px) ── */
+@media (max-width: 768px) {
+  
+  /* 1. Turn off strict scroll-snapping so mobile scrolling feels natural */
+  html {
+    scroll-snap-type: none;
+  }
+
+  /* 2. Allow sections to grow taller than the screen so nothing gets cut off */
+  .section { 
+    height: auto; 
+    min-height: 100vh;
+    overflow-y: visible; /* Let content show! */
+    padding: 80px 0; /* Give breathing room at the top and bottom */
+    scroll-snap-align: none;
+    display: block; /* Removes strict centering that breaks tall content */
+  }
+
+  /* 3. Make all main titles smaller to fit the narrow screen */
+  h1, h2[class$="__title"], .education-section > h2 {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 15px;
+  }
+
+  /* 4. Force side-by-side elements to stack on top of each other */
+  .form-row {
+    flex-direction: column;
+    gap: 0;
+  }
+
+  /* 5. Make buttons easier to tap with thumbs */
+  .btn {
+    width: 100%;
+    justify-content: center;
+    padding: 14px 18px; /* Taller buttons for mobile */
+  }
+
+  /* 6. Stack quick links nicely */
+  .quick-links {
+    flex-direction: column;
+    align-items: center;
+  }
+}
