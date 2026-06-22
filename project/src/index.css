@@ -90,7 +90,7 @@ button { cursor: pointer; }
 .container {
   width: 100%;
   /* UPDATED: Widened from 860px to 1000px to fill out large desktop screens */
-  max-width: 1000px; 
+  max-width: 1200px; 
   padding: 0 28px;
   margin: 0 auto;
 }
