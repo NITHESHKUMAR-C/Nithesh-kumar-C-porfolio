@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react'
 import './HeroSection.css'
+import profilePic from './nitheshc.png'
 
 const ROLES = ['Software Engineer', 'AI / ML Engineer', 'Full-Stack Developer', 'Problem Solver']
 
@@ -157,27 +158,9 @@ export default function HeroSection({ id, onNavigate }) {
       {/* ── Right ── */}
       <div className="hero__right">
         <PixelCanvas />
-        <div className="terminal">
-          <div className="terminal__bar">
-            <span className="dot dot--red" />
-            <span className="dot dot--yellow" />
-            <span className="dot dot--green" />
-            <span className="terminal__file mono"></span>
-          </div>
-          <pre className="terminal__body mono">{`const profile = {
-  name: "Nithesh Kumar C",
-  role: "Software Engineer",
-  stack: [
-    "React", "Python", "ML"
-  ],
-  cgpa: 8.22,
-  location: "Tamil Nadu",
-  open: true
-}`}</pre>
-        </div>
         
-        {/* 📸 UPDATED DIRECTLY TO NITHESH.JPG */}
-        <img src="/nithesh.png" alt="Nithesh Kumar C" className="hero__avatar profile-img" />
+        {/* 📸 Your main profile picture perfectly replacing the terminal! */}
+        <img src={profilePic} alt="Nithesh Kumar C" className="hero__image" />
         
       </div>
 
