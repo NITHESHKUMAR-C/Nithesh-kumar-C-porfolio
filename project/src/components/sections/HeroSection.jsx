@@ -154,16 +154,16 @@ export default function HeroSection({ id, onNavigate }) {
         </div>
       </div>
 
-     {/* ── Right ── */}
+      {/* ── Right ── */}
       <div className="hero__right">
         <PixelCanvas />
-        
-        {/* ... (terminal code is here) ... */}
-        
-        {/* 📸 HERE IS YOUR UPDATED IMAGE TAG */}
-        <img src="/nithesh.jpg" alt="Nithesh Kumar C" className="hero__avatar profile-img" />
-        
-      </div>
+        <div className="terminal">
+          <div className="terminal__bar">
+            <span className="dot dot--red" />
+            <span className="dot dot--yellow" />
+            <span className="dot dot--green" />
+            <span className="terminal__file mono"></span>
+          </div>
           <pre className="terminal__body mono">{`const profile = {
   name: "Nithesh Kumar C",
   role: "Software Engineer",
@@ -176,8 +176,8 @@ export default function HeroSection({ id, onNavigate }) {
 }`}</pre>
         </div>
         
-        {/* 📸 YOUR NEW SQUARE IMAGE TAG */}
-        <img src="/profile.jpg" alt="Nithesh Kumar C" className="hero__avatar profile-img" />
+        {/* 📸 UPDATED DIRECTLY TO NITHESH.JPG */}
+        <img src="/nithesh.png" alt="Nithesh Kumar C" className="hero__avatar profile-img" />
         
       </div>
 
