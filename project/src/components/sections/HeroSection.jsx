@@ -154,16 +154,16 @@ export default function HeroSection({ id, onNavigate }) {
         </div>
       </div>
 
-      {/* ── Right ── */}
+     {/* ── Right ── */}
       <div className="hero__right">
         <PixelCanvas />
-        <div className="terminal">
-          <div className="terminal__bar">
-            <span className="dot dot--red" />
-            <span className="dot dot--yellow" />
-            <span className="dot dot--green" />
-            <span className="terminal__file mono"></span>
-          </div>
+        
+        {/* ... (terminal code is here) ... */}
+        
+        {/* 📸 HERE IS YOUR UPDATED IMAGE TAG */}
+        <img src="/nithesh.jpg" alt="Nithesh Kumar C" className="hero__avatar profile-img" />
+        
+      </div>
           <pre className="terminal__body mono">{`const profile = {
   name: "Nithesh Kumar C",
   role: "Software Engineer",
@@ -188,14 +188,4 @@ export default function HeroSection({ id, onNavigate }) {
   
     </section>
   )
-}
-// Notice there is no "import" needed at the top of the file!
-
-export default function MySection() {
-  return (
-    <div>
-      {/* The "/" tells React to look inside the public folder */}
-      <img src="/nithesh.jpg" alt="My Profile" />
-    </div>
-  );
 }
