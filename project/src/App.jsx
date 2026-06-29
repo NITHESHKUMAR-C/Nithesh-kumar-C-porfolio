@@ -12,7 +12,7 @@ import ProjectsSection from './components/sections/ProjectsSection'
 import CertificationsSection from './components/sections/CertificationsSection'
 import EducationSection from './components/sections/EducationSection'
 import ContactSection from './components/sections/ContactSection'
-import { Analytics } from "@vercel/analytics/next"
+import { Analytics } from '@vercel/analytics/next'
 const SECTIONS = [
   { id: 'hero',           label: 'hero' },
   { id: 'about',          label: 'about' },
